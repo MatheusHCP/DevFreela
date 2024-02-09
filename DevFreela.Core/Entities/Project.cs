@@ -40,7 +40,29 @@ namespace DevFreela.Core.Repositories
 
 		public List<ProjectComment> Comments{ get; set; }
 
+		public void Cancel()
+		{
+			if (Status == ProjectStatusEnum.InProgress)
+			{
+				Status = ProjectStatusEnum.Cancelled;
+			}
+		}
 
+		public void Finish()
+		{
+			if(Status == ProjectStatusEnum.InProgress)
+			{
+				Status = ProjectStatusEnum.Finished;
+			}
+		}
+
+		public void Start()
+		{
+			if(Status == ProjectStatusEnum.Created)
+			{
+				Status = ProjectStatusEnum.InProgress;
+			}
+		}
 
 	}
 }
