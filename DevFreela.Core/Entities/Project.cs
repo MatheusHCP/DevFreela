@@ -5,20 +5,21 @@ namespace DevFreela.Core.Repositories
 {
 	public class Project : BaseEntity
 	{
-		public Project(string title, string description, int idclient, int idfreelancer, decimal totalcost)
-		{
-			Title = title;
-			Description = description;
-			idClient = idclient;
-			idFreeLancer = idfreelancer;
-			TotalCost = totalcost;
+        public Project(string title, string description, int idclient, int idfreelancer, decimal totalcost)
+        {
+            Title = title;
+            Description = description;
+            idClient = idclient;
+            idFreeLancer = idfreelancer;
+            TotalCost = totalcost;
 
-			CreatedAt = DateTime.Now;
-			Status = ProjectStatusEnum.Created;
-			Comments = new List<ProjectComment>();
+            CreatedAt = DateTime.Now;
+            Status = ProjectStatusEnum.Created;
+            Comments = new List<ProjectComment>();
+        
+        }
 
-
-		}
+        
 
 		public string Title{ get; set; }
 
@@ -61,7 +62,16 @@ namespace DevFreela.Core.Repositories
 			if(Status == ProjectStatusEnum.Created)
 			{
 				Status = ProjectStatusEnum.InProgress;
+				StartedAt = DateTime.Now;
 			}
+		}
+
+		public void Update(string title, string description, decimal totalCost)
+		{
+			Title = title;
+			Description = description;
+			TotalCost = totalCost;
+
 		}
 
 	}
