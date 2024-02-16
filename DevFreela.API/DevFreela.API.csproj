@@ -17,5 +17,8 @@
     <ProjectReference Include="..\DevFreela.Core\DevFreela.Core.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\DevFreela.Application\DevFreela.Application.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 </Project>
