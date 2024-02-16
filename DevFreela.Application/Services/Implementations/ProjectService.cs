@@ -50,7 +50,7 @@ namespace DevFreela.Application.Services.Implementations
         {
             var projetcs = _dbContext.Projects;
 
-            var projectsViewModel = projetcs.Select(p => new ProjectViewModel(p.Title, p.CreatedAt)).ToList();
+            var projectsViewModel = projetcs.Select(p => new ProjectViewModel(p.Id,p.Title, p.CreatedAt)).ToList();
 
             return projectsViewModel;
 
@@ -58,7 +58,9 @@ namespace DevFreela.Application.Services.Implementations
 
         public ProjectDetailsViewModel GetById(int id)
         {
-            var project = _dbContext.Projects.Single(p => p.Id == id);
+            var project = _dbContext.Projects.SingleOrDefault(p => p.Id == id);
+
+            if (project == null) return null;
 
             var projectDetailsViewModel = new ProjectDetailsViewModel(
                 project.Id,
@@ -82,7 +84,10 @@ namespace DevFreela.Application.Services.Implementations
 
         public void Update(UpdateProjectInputModel inputModel)
         {
-            throw new NotImplementedException();
+            var project = _dbContext.Projects.SingleOrDefault(p => p.Id == inputModel.Id);
+
+            project?.Update(inputModel.Title, inputModel.Description, inputModel.TotalCost);
+
         }
     }
 }
