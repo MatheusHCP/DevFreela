@@ -9,8 +9,8 @@ namespace DevFreela.Core.Repositories
         {
             Title = title;
             Description = description;
-            idClient = idclient;
-            idFreeLancer = idfreelancer;
+            IdClient = idclient;
+            IdFreeLancer = idfreelancer;
             TotalCost = totalcost;
 
             CreatedAt = DateTime.Now;
@@ -25,9 +25,9 @@ namespace DevFreela.Core.Repositories
 
 		public string Description { get; set; }
 
-		public int idClient{ get; set; }
+        public int IdClient { get; set; }
 
-		public int idFreeLancer{ get; set; }
+		public int IdFreeLancer{ get; set; }
 
 		public decimal TotalCost{ get; set; }
 

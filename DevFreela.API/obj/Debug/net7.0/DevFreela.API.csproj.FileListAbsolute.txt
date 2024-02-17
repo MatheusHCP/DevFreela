@@ -33,3 +33,15 @@
 /Users/matheuspereira/Estudos/DevFreela/DevFreela.API/obj/Debug/net7.0/DevFreela.API.pdb
 /Users/matheuspereira/Estudos/DevFreela/DevFreela.API/obj/Debug/net7.0/DevFreela.API.genruntimeconfig.cache
 /Users/matheuspereira/Estudos/DevFreela/DevFreela.API/obj/Debug/net7.0/ref/DevFreela.API.dll
+/Users/matheuspereira/Estudos/DevFreela/DevFreela.API/bin/Debug/net7.0/DevFreela.Application.dll
+/Users/matheuspereira/Estudos/DevFreela/DevFreela.API/bin/Debug/net7.0/DevFreela.Infrastructure.dll
+/Users/matheuspereira/Estudos/DevFreela/DevFreela.API/bin/Debug/net7.0/DevFreela.Application.pdb
+/Users/matheuspereira/Estudos/DevFreela/DevFreela.API/bin/Debug/net7.0/DevFreela.Infrastructure.pdb
+/Users/matheuspereira/Estudos/DevFreela/DevFreela.API/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.dll
+/Users/matheuspereira/Estudos/DevFreela/DevFreela.API/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/matheuspereira/Estudos/DevFreela/DevFreela.API/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/matheuspereira/Estudos/DevFreela/DevFreela.API/bin/Debug/net7.0/Microsoft.Extensions.Configuration.dll
+/Users/matheuspereira/Estudos/DevFreela/DevFreela.API/bin/Debug/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/Users/matheuspereira/Estudos/DevFreela/DevFreela.API/bin/Debug/net7.0/Microsoft.Extensions.Primitives.dll
+/Users/matheuspereira/Estudos/DevFreela/DevFreela.API/bin/Debug/net7.0/MySqlConnector.dll
+/Users/matheuspereira/Estudos/DevFreela/DevFreela.API/bin/Debug/net7.0/Pomelo.EntityFrameworkCore.MySql.dll

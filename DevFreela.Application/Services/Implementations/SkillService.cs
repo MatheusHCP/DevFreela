@@ -1,5 +1,4 @@
-﻿using System;
-using DevFreela.Application.Services.Interfaces;
+﻿using DevFreela.Application.Services.Interfaces;
 using DevFreela.Application.ViewModels;
 using DevFreela.Infrastructure.Persistence;
 
@@ -17,6 +16,9 @@ namespace DevFreela.Application.Services.Implementations
 
         public List<SkillViewModel> GetAll()
         {
+
+
+
             var skills = _dbContext.Skills;
 
             var SkillsViewModel = skills

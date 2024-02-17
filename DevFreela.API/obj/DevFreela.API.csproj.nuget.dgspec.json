@@ -17,18 +17,23 @@
           "/Users/matheuspereira/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/sdk/7.0.312/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
+              "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Application/DevFreela.Application.csproj": {
+                "projectPath": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Application/DevFreela.Application.csproj"
+              },
               "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Core/DevFreela.Core.csproj": {
                 "projectPath": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Core/DevFreela.Core.csproj"
+              },
+              "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Infrastructure/DevFreela.Infrastructure.csproj": {
+                "projectPath": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Infrastructure/DevFreela.Infrastructure.csproj"
               }
             }
           }
@@ -37,15 +42,26 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[7.0.15, )"
+              "version": "[8.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -71,43 +87,61 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.312/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Core/DevFreela.Core.csproj": {
+    "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Application/DevFreela.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Core/DevFreela.Core.csproj",
-        "projectName": "DevFreela.Core",
-        "projectPath": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Core/DevFreela.Core.csproj",
+        "projectUniqueName": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Application/DevFreela.Application.csproj",
+        "projectName": "DevFreela.Application",
+        "projectPath": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Application/DevFreela.Application.csproj",
         "packagesPath": "/Users/matheuspereira/.nuget/packages/",
-        "outputPath": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Core/obj/",
+        "outputPath": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/matheuspereira/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
-            "projectReferences": {}
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Core/DevFreela.Core.csproj": {
+                "projectPath": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Core/DevFreela.Core.csproj"
+              },
+              "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Infrastructure/DevFreela.Infrastructure.csproj": {
+                "projectPath": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Infrastructure/DevFreela.Infrastructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -124,7 +158,143 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.312/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Core/DevFreela.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Core/DevFreela.Core.csproj",
+        "projectName": "DevFreela.Core",
+        "projectPath": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Core/DevFreela.Core.csproj",
+        "packagesPath": "/Users/matheuspereira/.nuget/packages/",
+        "outputPath": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/matheuspereira/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Infrastructure/DevFreela.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Infrastructure/DevFreela.Infrastructure.csproj",
+        "projectName": "DevFreela.Infrastructure",
+        "projectPath": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Infrastructure/DevFreela.Infrastructure.csproj",
+        "packagesPath": "/Users/matheuspereira/.nuget/packages/",
+        "outputPath": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/matheuspereira/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Core/DevFreela.Core.csproj": {
+                "projectPath": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.Core/DevFreela.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
