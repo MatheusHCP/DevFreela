@@ -3,9 +3,9 @@ using DevFreela.Application.ViewModels;
 
 namespace DevFreela.Application.Services.Interfaces
 {
-	public interface ISkillService
+	public interface IUserService
 	{
-		List<SkillViewModel> GetAll();
+		void RegisterUser(NewUserInputModel inputmodel);
 	}
 }
 

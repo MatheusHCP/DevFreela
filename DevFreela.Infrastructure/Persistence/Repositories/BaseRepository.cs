@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Repositorio
+namespace DevFreela.Infrastructure.Persistence.Repositories
 {
     public class BaseRepository<T>
          : IDisposable, IBaseRepository<T> where T : class

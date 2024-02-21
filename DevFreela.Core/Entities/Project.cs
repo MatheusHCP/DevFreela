@@ -1,7 +1,7 @@
 ﻿using System;
 using DevFreela.Core.Enums;
 
-namespace DevFreela.Core.Repositories
+namespace DevFreela.Core.Entities
 {
 	public class Project : BaseEntity
 	{

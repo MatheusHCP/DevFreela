@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DevFreela.Core.Repositories
+namespace DevFreela.Core.Entities
 {
 	public abstract class BaseEntity
 	{

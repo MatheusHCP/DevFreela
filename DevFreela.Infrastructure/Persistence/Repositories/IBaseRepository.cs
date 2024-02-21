@@ -1,4 +1,4 @@
-﻿namespace Repositorio
+﻿namespace DevFreela.Infrastructure.Persistence.Repositories
 {
     interface IBaseRepository<T> where T : class
     {

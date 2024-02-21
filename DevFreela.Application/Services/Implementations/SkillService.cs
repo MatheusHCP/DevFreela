@@ -4,28 +4,23 @@ using DevFreela.Infrastructure.Persistence;
 
 namespace DevFreela.Application.Services.Implementations
 {
-    public class SkillService : ISkillService
+    public class UserService : IUserService
     {
 
         private readonly DevFreelaDbContext _dbContext;
 
-        public SkillService(DevFreelaDbContext dbContext)
+        public UserService(DevFreelaDbContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        public List<SkillViewModel> GetAll()
+        public void RegisterUser(NewUserInputModel inputmodel)
         {
+            if(inputmodel.FullName.Length > 250)
+            {
+                throw new Exception("Nome excedeu o limite máximo de 250 caracteres.");
+            }
 
-
-
-            var skills = _dbContext.Skills;
-
-            var SkillsViewModel = skills
-                .Select(s => new SkillViewModel(s.Id, s.Description))
-                .ToList();
-
-            return SkillsViewModel;
         }
     }
 }
