@@ -12,6 +12,11 @@ namespace DevFreela.Core.Repositories
 			CreatedAt = DateTime.Now;
 		}
 
+		public ProjectComment()
+		{
+				
+		}
+
 		public string Content { get; set; }
 
 		public int IdProject{ get; set; }
@@ -19,6 +24,15 @@ namespace DevFreela.Core.Repositories
 		public int IdUser { get; set; }
 
 		public DateTime CreatedAt { get; set; }
+
+
+		#region Navigations
+
+		public Project Project { get; set; }
+
+		public User User{ get; set; }
+
+		#endregion
 	}
 }
 

@@ -15,19 +15,18 @@ namespace DevFreela.Core.Repositories
 
             CreatedAt = DateTime.Now;
             Status = ProjectStatusEnum.Created;
-            Comments = new List<ProjectComment>();
+            
         
         }
 
-        
+		public Project()
+		{
+
+        }
 
 		public string Title{ get; set; }
 
 		public string Description { get; set; }
-
-        public int IdClient { get; set; }
-
-		public int IdFreeLancer{ get; set; }
 
 		public decimal TotalCost{ get; set; }
 
@@ -39,7 +38,21 @@ namespace DevFreela.Core.Repositories
 
 		public ProjectStatusEnum Status { get; set; }
 
-		public List<ProjectComment> Comments{ get; set; }
+        #region Foreign Key
+
+        public int IdClient { get; set; }
+
+        public int IdFreeLancer { get; set; }
+
+		#endregion
+
+		#region Navigations
+
+		public User User{ get; set; }
+
+		public ICollection<ProjectComment> ProjectComments{ get; set; }
+
+		#endregion
 
 		public void Cancel()
 		{

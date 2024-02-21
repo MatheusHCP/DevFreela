@@ -4,10 +4,9 @@ namespace DevFreela.Core.Repositories
 	public class Skill : BaseEntity
 	{
 
-		public Skill(string description)
+		public Skill()
 		{
-			Description = description;
-			CreatedAt = DateTime.Now;
+
 		}
 
 		public string Description{ get; set; }

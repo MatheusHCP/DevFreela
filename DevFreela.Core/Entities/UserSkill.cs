@@ -9,9 +9,23 @@ namespace DevFreela.Core.Repositories
 			IdSkill = idSkill;
 		}
 
+		public UserSkill()
+		{
+
+		}
+
 		public int IdUser{ get; set; }
 
 		public int IdSkill { get; set; }
+
+
+		#region Navigations
+
+		public User User{ get; set; }
+
+		public Skill Skill{ get; set; }
+
+		#endregion
 	}
 }
 

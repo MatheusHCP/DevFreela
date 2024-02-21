@@ -10,10 +10,12 @@ namespace DevFreela.Core.Repositories
 			BirthDate = birthDate;
 			Active = true;
 			CreatedAt = DateTime.Now;
-			Skills = new List<UserSkill>();
-            OwnerProjects = new List<Project>();
-            FreelanceProjects = new List<Project>();
         }
+
+		public User()
+		{
+
+		}
 
         public string FullName{ get; set; }
 
@@ -25,13 +27,20 @@ namespace DevFreela.Core.Repositories
 
 		public bool Active{ get; set; }
 
-		public List<UserSkill> Skills { get; set; }
-
-        public List<Project> OwnerProjects { get; set; }
-
-        public List<Project> FreelanceProjects { get; set; }
 
 
-	}
+		#region Navigations
+
+		public ICollection<Project> Projects{ get; set; }
+
+        public ICollection<UserSkill> UserSkills { get; set; }
+
+        public ICollection<ProjectComment> ProjectComments { get; set; }
+
+
+        #endregion
+
+
+    }
 }
 
