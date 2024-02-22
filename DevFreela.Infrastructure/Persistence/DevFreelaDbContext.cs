@@ -1,25 +1,34 @@
 ﻿using System.Reflection;
-using DevFreela.Core.Repositories;
+using DevFreela.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace DevFreela.Infrastructure.Persistence
 {
 	public class DevFreelaDbContext : DbContext
     {
-        public DevFreelaDbContext()
-        {
-        }
+
 
         public DevFreelaDbContext(DbContextOptions<DevFreelaDbContext> options) : base(options)
         {
         }
 
+        public DevFreelaDbContext()
+        {
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-            base.OnModelCreating(modelBuilder);
+            
+        }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+            if (!optionsBuilder.IsConfigured)
+            {
+
+            }
         }
 
 

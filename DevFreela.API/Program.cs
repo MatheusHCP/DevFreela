@@ -1,6 +1,7 @@
 ﻿using DevFreela.Application.Services.Implementations;
 using DevFreela.Application.Services.Interfaces;
 using DevFreela.Infrastructure.Persistence;
+using DevFreela.Infrastructure.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -12,11 +13,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-
-//Dependency Injections
-builder.Services.AddScoped<DevFreelaDbContext>();
-builder.Services.AddScoped<IProjectService, ProjectService>();
-builder.Services.AddScoped<ISkillService, SkillService>();
 
 builder.Services.AddSwaggerGen();
 
@@ -31,6 +27,14 @@ builder.Services.AddDbContext<DevFreelaDbContext>(opt =>
                 .EnableSensitiveDataLogging()
                 .EnableDetailedErrors()
 );
+
+//Dependency Injections
+builder.Services.AddScoped<IProjectService, ProjectService>();
+builder.Services.AddScoped<ISkillService, SkillService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<UserRepository>();
+
+
 
 var app = builder.Build();
 

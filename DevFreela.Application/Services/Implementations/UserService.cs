@@ -1,31 +1,35 @@
 ﻿using DevFreela.Application.Services.Interfaces;
+using DevFreela.Infrastructure.Persistence.Repositories;
+using DevFreela.Core.Entities;
 using DevFreela.Application.ViewModels;
-using DevFreela.Infrastructure.Persistence;
 
 namespace DevFreela.Application.Services.Implementations
 {
-    public class SkillService : ISkillService
+    public class UserService : IUserService
     {
 
-        private readonly DevFreelaDbContext _dbContext;
+        private readonly UserRepository _userRepository;
 
-        public SkillService(DevFreelaDbContext dbContext)
+        public UserService(UserRepository userRepository)
         {
-            _dbContext = dbContext;
+            _userRepository = userRepository;
         }
 
-        public List<SkillViewModel> GetAll()
+        public void RegisterUser(NewUserInputModel inputmodel)
         {
+            if(inputmodel.FullName.Length > 250)
+            {
+                throw new Exception("Nome excedeu o limite máximo de 250 caracteres.");
+            }
 
+            if (inputmodel.Email.Length > 250)
+            {
+                throw new Exception("Email excedeu o limite máximo de 250 caracteres.");
+            }
 
+            var User = new User(inputmodel.FullName, inputmodel.Email, inputmodel.BirthDate);
 
-            var skills = _dbContext.Skills;
-
-            var SkillsViewModel = skills
-                .Select(s => new SkillViewModel(s.Id, s.Description))
-                .ToList();
-
-            return SkillsViewModel;
+            _userRepository.add(User);
         }
     }
 }

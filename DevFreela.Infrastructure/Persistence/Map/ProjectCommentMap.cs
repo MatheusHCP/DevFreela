@@ -1,4 +1,4 @@
-﻿using DevFreela.Core.Repositories;
+﻿using DevFreela.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

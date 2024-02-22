@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace DevFreela.Application.Services.Interfaces
+namespace DevFreela.Application.ViewModels
 {
-	public interface NewUserInputModel
+	public class NewUserInputModel
 	{
-		public string FullName{ get; set; }
+		public required string FullName{ get; set; }
 
-		public string Email{ get; set; }
+		public required string Email{ get; set; }
 
 		public DateTime BirthDate{ get; set; }
 	}

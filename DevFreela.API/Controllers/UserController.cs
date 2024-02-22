@@ -1,5 +1,6 @@
 ﻿using System;
 using DevFreela.Application.Services.Interfaces;
+using DevFreela.Application.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevFreela.API.Controllers
@@ -8,8 +9,15 @@ namespace DevFreela.API.Controllers
 	public class UserController : ControllerBase
 	{
 
-		// api/users/1
-		[HttpGet("{id}")]
+        private readonly IUserService _userService;
+
+        public UserController(IUserService userService)
+        {
+            _userService = userService;
+        }
+
+        // api/users/1
+        [HttpGet("{id}")]
 		public IActionResult getById(int id)
 		{
 			return Ok();
@@ -18,6 +26,9 @@ namespace DevFreela.API.Controllers
 		[HttpPost]
         public IActionResult Post([FromBody] NewUserInputModel inputModel)
 		{
+
+			_userService.RegisterUser(inputModel);
+
 			return Ok();
 		}
 

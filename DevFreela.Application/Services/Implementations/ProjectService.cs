@@ -1,7 +1,7 @@
 ﻿using System;
 using DevFreela.Application.Services.Interfaces;
 using DevFreela.Application.ViewModels;
-using DevFreela.Core.Repositories;
+using DevFreela.Core.Entities;
 using DevFreela.Infrastructure.Persistence;
 
 namespace DevFreela.Application.Services.Implementations
@@ -56,7 +56,7 @@ namespace DevFreela.Application.Services.Implementations
 
         }
 
-        public ProjectDetailsViewModel GetById(int id)
+        public ProjectDetailsViewModel? GetById(int id)
         {
             var project = _dbContext.Projects.SingleOrDefault(p => p.Id == id);
 

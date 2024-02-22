@@ -1,32 +1,10 @@
-﻿using DevFreela.Application.Services.Interfaces;
+﻿using System;
 using DevFreela.Application.ViewModels;
-using DevFreela.Infrastructure.Persistence;
 
-namespace DevFreela.Application.Services.Implementations
+namespace DevFreela.Application.Services.Interfaces
 {
-    public class SkillService : ISkillService
+    public interface IUserService
     {
-
-        private readonly DevFreelaDbContext _dbContext;
-
-        public SkillService(DevFreelaDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
-
-        public List<SkillViewModel> GetAll()
-        {
-
-
-
-            var skills = _dbContext.Skills;
-
-            var SkillsViewModel = skills
-                .Select(s => new SkillViewModel(s.Id, s.Description))
-                .ToList();
-
-            return SkillsViewModel;
-        }
+        void RegisterUser(NewUserInputModel inputmodel);
     }
 }
-

@@ -1,75 +1,54 @@
-﻿using DevFreela.Infrastructure.Persistence;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿using Microsoft.EntityFrameworkCore;
 namespace DevFreela.Infrastructure.Persistence.Repositories
 {
     public class BaseRepository<T>
          : IDisposable, IBaseRepository<T> where T : class
     {
-        private DevFreelaDbContext? _context;
+
+
+        private readonly DevFreelaDbContext _context;
+
+        public BaseRepository(DevFreelaDbContext devFreelaDbContext)
+        {
+            _context = devFreelaDbContext;
+        }
 
 
         public T get(int id)
         {
-            using (_context = new DevFreelaDbContext())
-            {
-                return _context.Set<T>().Find(id);
-            }
+            
+            return _context.Set<T>().Find(id);
 
         }
 
         public List<T> getAll()
         {
-            using (_context = new DevFreelaDbContext())
-            {
-                return _context.Set<T>().ToList();
-            }
+            return _context.Set<T>().ToList();
 
         }
 
         public void add(T item)
         {
-            using (_context = new DevFreelaDbContext())
-            {
-                _context.Set<T>().Add(item);
-                _context.SaveChanges();
-            }
-
-
+            _context.Set<T>().Add(item);
+            _context.SaveChanges();
         }
 
         public void delete(T item)
         {
-            using (_context = new DevFreelaDbContext())
-            {
-                //_context.Set<T>().Remove(item);
-                _context.Entry(item).State = EntityState.Deleted;
-                _context.SaveChanges();
-            }
-
-
+            _context.Set<T>().Remove(item);
+            _context.Entry(item).State = EntityState.Deleted;
+            _context.SaveChanges();
         }
 
         public void edit(T item)
         {
-            using (_context = new DevFreelaDbContext())
-            {
-                _context.Entry(item).State = EntityState.Modified;
-                _context.SaveChanges();
-            }
-
+            _context.Entry(item).State = EntityState.Modified;
+            _context.SaveChanges();
         }
 
         public void Dispose()
         {
-            using (_context = new DevFreelaDbContext())
-            {
-                _context.Dispose();
-            }
-
+            _context.Dispose();
         }
     }
 
