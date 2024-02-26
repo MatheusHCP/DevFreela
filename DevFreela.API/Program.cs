@@ -1,4 +1,5 @@
-﻿using DevFreela.Application.Services.Implementations;
+﻿using DevFreela.Application.Mapping;
+using DevFreela.Application.Services.Implementations;
 using DevFreela.Application.Services.Interfaces;
 using DevFreela.Infrastructure.Persistence;
 using DevFreela.Infrastructure.Persistence.Repositories;
@@ -33,6 +34,8 @@ builder.Services.AddScoped<IProjectService, ProjectService>();
 builder.Services.AddScoped<ISkillService, SkillService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<UserRepository>();
+
+builder.Services.AddAutoMapper(typeof(UserProfile));
 
 
 

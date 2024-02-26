@@ -13,5 +13,7 @@ public class UserMap : IEntityTypeConfiguration<User>
         builder.Property(p => p.BirthDate).HasColumnType("Date").IsRequired();
         builder.Property(p => p.CreatedAt).HasColumnType("Date").IsRequired();
         builder.Property(p => p.Active).IsRequired();
+        builder.Property(p => p.Username).IsRequired();
+        builder.Property(p => p.Password).IsRequired();
     }
 }

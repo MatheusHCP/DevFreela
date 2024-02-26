@@ -2,6 +2,7 @@
 using DevFreela.Infrastructure.Persistence.Repositories;
 using DevFreela.Core.Entities;
 using DevFreela.Application.ViewModels;
+using AutoMapper;
 
 namespace DevFreela.Application.Services.Implementations
 {
@@ -9,10 +10,21 @@ namespace DevFreela.Application.Services.Implementations
     {
 
         private readonly UserRepository _userRepository;
+        private readonly IMapper _mapper;
 
-        public UserService(UserRepository userRepository)
+        public UserService(UserRepository userRepository, IMapper mapper)
         {
             _userRepository = userRepository;
+            _mapper = mapper;
+        }
+
+        public UserModel GetUserById(int id)
+        {
+            var user = _userRepository.get(id);
+
+            var userModel = _mapper.Map<UserModel>(user);
+
+            return userModel;
         }
 
         public void RegisterUser(NewUserInputModel inputmodel)

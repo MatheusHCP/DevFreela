@@ -22,15 +22,6 @@ namespace DevFreela.Infrastructure.Persistence
             
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-            if (!optionsBuilder.IsConfigured)
-            {
-
-            }
-        }
-
 
         public DbSet<Project> Projects { get; set; }
 

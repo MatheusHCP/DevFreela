@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "o6JvMflkQI6xhhBCww/ZnyMmQHmQE1mer6qhvaTF9vSUoOSEPyTMlI59p/h+Oz/0yr7KOqZcxbFxoEwp6THZsw==",
+  "dgSpecHash": "ML39MUl4tFt3EaLCav9AHIGFXy3P2wMFla1Ti2DZBFOIJBD7e+/lgbYDDZv2mcwu1auNMYb0NUTwvC6tXyxf8w==",
   "success": true,
   "projectFilePath": "/Users/matheuspereira/Estudos/DevFreela/DevFreela.API/DevFreela.API.csproj",
   "expectedPackageFiles": [
+    "/Users/matheuspereira/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/Users/matheuspereira/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/matheuspereira/.nuget/packages/microsoft.aspnetcore.openapi/8.0.2/microsoft.aspnetcore.openapi.8.0.2.nupkg.sha512",
     "/Users/matheuspereira/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
